@@ -8,6 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Install dependencies and Build Web
+      run: |
+        npm install
+        npm run build
+    - name: Sync Capacitor
+      run: npx cap sync android
     - name: set up JDK 21
       uses: actions/setup-java@v4
       with:
@@ -17,7 +27,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x android/gradlew
     - name: Build with Gradle
-      run: cd android && ./gradlew assembleDebug --stacktrace
+      run: cd android && ./gradlew assembleDebug
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
