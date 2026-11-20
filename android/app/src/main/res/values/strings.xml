@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">MyGame</string>
-    <string name="title_activity_main">MyGame</string>
+    <string name="app_name">Reflex</string>
+    <string name="title_activity_main">Reflex</string>
     <string name="package_name">com.mygame.app</string>
     <string name="custom_url_scheme">com.mygame.app</string>
 </resources>
